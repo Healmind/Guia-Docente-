@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Docente: Liderazgo, Emprendimiento e Innovación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F8FA;
+            color: #1D232F;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease-out;
+        }
+        .accordion-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        .text-comillas-blue { color: #003366; }
+        .bg-comillas-yellow-light { background-color: #FFDDAA; }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-comillas-blue">Guía Docente</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#overview" class="text-gray-600 hover:text-comillas-blue">Visión General</a>
+                <a href="#schedule" class="text-gray-600 hover:text-comillas-blue">Cronograma</a>
+                <a href="#evaluation" class="text-gray-600 hover:text-comillas-blue">Evaluación</a>
+                <a href="#resources" class="text-gray-600 hover:text-comillas-blue">Recursos</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container mx-auto px-6 py-12">
+        <section id="hero" class="mb-12">
+            <div class="relative w-full h-80 rounded-lg overflow-hidden shadow-xl">
+                <img src="https://placehold.co/1200x400/003366/FFFFFF?text=UNIVERSIDAD%20PONTIFICIA%20COMILLAS" alt="Edificio principal de la Universidad Pontificia Comillas" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+        </section>
+        <section id="overview" class="mb-16 scroll-mt-24">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-comillas-blue">Liderazgo, Emprendimiento e Innovación</h1>
+                <p class="text-lg text-gray-600 mt-2">Doble Grado de Psicología y Administración y Dirección de Empresas</p>
+                <p class="mt-4 text-gray-700">Profesora: <span class="font-semibold">Catalina Ayuso de Paúl</span></p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <h3 class="font-semibold text-lg text-comillas-blue">Créditos</h3>
+                    <p class="text-3xl font-bold mt-2">6,0 ECTS</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <h3 class="font-semibold text-lg text-comillas-blue">Carácter</h3>
+                    <p class="text-3xl font-bold mt-2">Obligatoria</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <h3 class="font-semibold text-lg text-comillas-blue">Nivel</h3>
+                    <p class="text-3xl font-bold mt-2">Grado</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-center mb-8 text-comillas-blue">Competencias a Desarrollar</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">Aportación al Perfil Profesional</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Esta asignatura busca dotar a los estudiantes de un perfil proactivo y resolutivo, capaz de aplicar la teoría para resolver problemas en el mundo real. Les proporcionará las herramientas necesarias para emprender, liderar e innovar en cualquier contexto profesional, incluyendo proyectos sociales, clínicas, y nuevas iniciativas.</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="border-l-4 border-comillas-blue pl-4">
+                            <h4 class="font-bold text-lg">Resolución de Problemas</h4>
+                            <p class="text-gray-600 text-sm">Identificar y analizar problemas complejos, formulando preguntas de investigación pertinentes.</p>
+                        </div>
+                        <div class="border-l-4 border-comillas-blue pl-4">
+                            <h4 class="font-bold text-lg">Trabajo en Equipo</h4>
+                            <p class="text-gray-600 text-sm">Colaborar eficazmente en equipos, gestionando roles y tareas de forma organizada.</p>
+                        </div>
+                        <div class="border-l-4 border-comillas-blue pl-4">
+                            <h4 class="font-bold text-lg">Comunicación Efectiva</h4>
+                            <p class="text-gray-600 text-sm">Comunicar ideas complejas de forma clara, concisa y persuasiva.</p>
+                        </div>
+                        <div class="border-l-4 border-comillas-blue pl-4">
+                            <h4 class="font-bold text-lg">Metodologías de Emprendimiento</h4>
+                            <p class="text-gray-600 text-sm">Aplicar herramientas como Lean Canvas y Mapa de Empatía para estructurar y validar ideas.</p>
+                        </div>
+                        <div class="border-l-4 border-comillas-blue pl-4">
+                            <h4 class="font-bold text-lg">Fundamentos del Liderazgo</h4>
+                            <p class="text-gray-600 text-sm">Identificar estilos de liderazgo y adaptar el enfoque para motivar y guiar equipos.</p>
+                        </div>
+                        <div class="border-l-4 border-comillas-blue pl-4">
+                            <h4 class="font-bold text-lg">Evaluación de Impacto</h4>
+                            <p class="text-gray-600 text-sm">Establecer métricas clave para medir el éxito de un proyecto y tomar decisiones basadas en datos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="schedule" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-center mb-8 text-comillas-blue">Cronograma del Curso</h2>
+             <div class="space-y-4" id="schedule-accordion">
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 1-2: Psicología del Emprendimiento y Elección del Proyecto</span>
+                        <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Se adquieren los fundamentos teóricos de la psicología del emprendimiento. Cada equipo elige y valida una necesidad real para desarrollar su proyecto a lo largo del curso.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 3-4: Emprendimiento con Propósito e Impacto Social</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Se explora el modelo de los fondos de impacto, aprendiendo a generar valor económico y social. Se enseñan métricas clave como los Objetivos de Desarrollo Sostenible (ODS).</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 5-6: Herramientas Prácticas y Búsqueda de Capital</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Fase de acción: los equipos desarrollan herramientas de comunicación como el Elevator Pitch y el Storytelling, y utilizan el Mapa de Empatía para comprender a su cliente ideal.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 7-8: Desarrollo y Planificación Teórica del Proyecto</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Construcción de la base teórica del proyecto. Se utiliza el Lean Canvas para estructurar y validar la idea, desde la propuesta de valor hasta los canales de distribución.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 9-10: Evaluación y Medición Teórica de Resultados</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Aprendizaje sobre cómo evaluar y medir el impacto. Se definen KPIs (Key Performance Indicators) y se establece un marco para medir el éxito a corto y largo plazo.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 11-12: Fundamentos Psicológicos del Liderazgo</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Análisis del rol del líder y las dinámicas de equipo. Se estudian los estilos de liderazgo, la gestión de conflictos y cómo fomentar un entorno de trabajo colaborativo e innovador.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 13-14: Innovación en el Contexto Organizacional</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Se exploran estrategias para fomentar una cultura de innovación dentro de una organización, analizando casos de éxito y fracaso para extraer lecciones aplicables.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md">
+                    <button class="w-full flex justify-between items-center p-6 text-left accordion-toggle">
+                        <span class="text-lg font-semibold text-comillas-blue">Semanas 15-16: Presentación Final y Cierre</span>
+                         <svg class="w-6 h-6 accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-6 pt-0 text-gray-600">Presentación final de los proyectos, aplicando todas las herramientas aprendidas. La presentación consistirá en un Elevator Pitch profesional, claro, memorable y persuasivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="evaluation" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-center mb-8 text-comillas-blue">Sistema de Evaluación</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="evaluationChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-700">Ponderación de la Calificación</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="h-8 w-8 rounded-full bg-yellow-500 flex-shrink-0 mr-4 mt-1"></span>
+                                <div>
+                                    <p class="font-bold text-lg">Investigación y Exposición (40%)</p>
+                                    <p class="text-gray-600">Calidad de la investigación, profundidad del contenido, y claridad de la exposición en clase.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="h-8 w-8 rounded-full bg-comillas-blue flex-shrink-0 mr-4 mt-1"></span>
+                                <div>
+                                    <p class="font-bold text-lg">Trabajo Final (40%)</p>
+                                    <p class="text-gray-600">Calidad del proyecto, validación de la idea, estrategia de medición y comunicación (Elevator Pitch).</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="h-8 w-8 rounded-full bg-yellow-300 flex-shrink-0 mr-4 mt-1"></span>
+                                <div>
+                                    <p class="font-bold text-lg">Participación y Proactividad (20%)</p>
+                                    <p class="text-gray-600">Originalidad de ideas, iniciativa, dinamismo en el trabajo en equipo y participación en debates.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-8 bg-gray-100 border-l-4 border-gray-400 p-4 rounded-r-lg">
+                            <p class="font-semibold text-gray-800">Requisito para aprobar: se debe obtener una calificación final igual o superior al 80% del total.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="resources" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold text-center mb-8 text-comillas-blue">Bibliografía y Recursos</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold text-comillas-blue mb-2">The Lean Startup</h3>
+                    <p class="text-gray-500 mb-4">de Eric Ries</p>
+                    <p class="text-gray-600 flex-grow">Fundamental para aprender la metodología Lean, que se aplicará con el Lean Canvas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold text-comillas-blue mb-2">El Manual del Emprendedor</h3>
+                    <p class="text-gray-500 mb-4">de Steve Blank & Bob Dorf</p>
+                    <p class="text-gray-600 flex-grow">Un clásico para entender el desarrollo de clientes y la validación de hipótesis de negocio.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold text-comillas-blue mb-2">Measure What Matters</h3>
+                    <p class="text-gray-500 mb-4">de John Doerr</p>
+                    <p class="text-gray-600 flex-grow">Esencial sobre OKRs (Objectives and Key Results), perfecto para definir KPIs y medir el éxito.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold text-comillas-blue mb-2">Recursos en Línea</h3>
+                    <p class="text-gray-500 mb-4">Publicaciones y Blogs</p>
+                    <div class="text-gray-600 flex-grow">
+                        <p>Se hará uso de plataformas como:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Harvard Business Review</li>
+                            <li>MIT Sloan Management Review</li>
+                            <li>Stanford Social Innovation Review</li>
+                            <li>Forbes</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold text-comillas-blue mb-2">Aportaciones de los Estudiantes</h3>
+                    <p class="text-gray-500 mb-4">Bibliografía Colaborativa</p>
+                    <p class="text-gray-600 flex-grow">Los estudiantes deberán aportar los artículos, vídeos y estudios de caso que utilicen en sus investigaciones, enriqueciendo el material del curso para toda la clase.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold text-comillas-blue mb-2">IA Studio</h3>
+                    <p class="text-gray-500 mb-4">Herramienta Práctica</p>
+                    <p class="text-gray-600 flex-grow">La plataforma IA Studio será un recurso central para que los estudiantes desarrollen los prototipos funcionales de sus proyectos finales.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white mt-16 border-t">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+             <p>&copy; 2025 Catalina Ayuso de Paúl. Guía Docente Interactiva.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('evaluationChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Investigación y Exposición', 'Trabajo Final', 'Participación y Proactividad'],
+                    datasets: [{
+                        label: 'Ponderación de la Nota',
+                        data: [40, 40, 20],
+                        backgroundColor: [
+                            '#F59E0B',
+                            '#003366',
+                            '#FFDDAA'
+                        ],
+                        borderColor: '#F4F8FA',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            const accordionToggles = document.querySelectorAll('.accordion-toggle');
+            accordionToggles.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const arrow = button.querySelector('.accordion-arrow');
+                    button.setAttribute('aria-expanded', content.classList.contains('open') ? 'false' : 'true');
+                    content.classList.toggle('open');
+                    arrow.classList.toggle('rotated');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
