@@ -60,7 +60,10 @@
 
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-comillas-blue">Guía Docente</div>
+            <div class="flex items-center space-x-4">
+                <img src="https://placehold.co/100x40/003366/FFFFFF?text=COMILLAS" alt="Logo de la Universidad Pontificia Comillas" class="h-8 md:h-10">
+                <div class="text-xl font-bold text-comillas-blue">Guía Docente</div>
+            </div>
             <div class="hidden md:flex space-x-8">
                 <a href="#overview" class="text-gray-600 hover:text-comillas-blue">Visión General</a>
                 <a href="#schedule" class="text-gray-600 hover:text-comillas-blue">Cronograma</a>
@@ -79,7 +82,7 @@
 
         <section id="overview" class="mb-16 scroll-mt-24">
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-comillas-blue">Liderazgo, Emprendimiento e Innovación</h1>
+                <h1 class="text-4xl font-bold text-comillas-blue md:text-5xl">Liderazgo, Emprendimiento<br/>e Innovación</h1>
                 <p class="text-lg text-gray-600 mt-2">Doble Grado de Psicología y Administración y Dirección de Empresas</p>
                 <p class="mt-4 text-gray-700">Profesora: <span class="font-semibold">Catalina Ayuso de Paúl</span></p>
             </div>
@@ -257,7 +260,7 @@
                             </li>
                         </ul>
                         <div class="mt-8 bg-gray-100 border-l-4 border-gray-400 p-4 rounded-r-lg">
-                            <p class="font-semibold text-gray-800">Requisito para aprobar: se debe obtener una calificación final igual o superior al 80% del total.</p>
+                            <p class="font-semibold text-gray-800">Requisito para aprobar: se debe obtener una puntuación final del 50% o más. Es obligatorio haber entregado el trabajo final para aprobar la asignatura.</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +283,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
                     <h3 class="text-xl font-bold text-comillas-blue mb-2">Measure What Matters</h3>
                     <p class="text-gray-500 mb-4">de John Doerr</p>
-                    <p class="text-gray-600 flex-grow">Esencial sobre OKRs (Objectives and Key Results), perfecto para definir KPIs y medir el éxito.</p>
+                    <p class="text-600 flex-grow">Esencial sobre OKRs (Objectives and Key Results), perfecto para definir KPIs y medir el éxito.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
                     <h3 class="text-xl font-bold text-comillas-blue mb-2">Recursos en Línea</h3>
